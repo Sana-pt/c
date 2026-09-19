@@ -1,0 +1,30 @@
+ #include<stdio.h>
+  void swap(int *n,int *m)
+   {
+      int temp;
+      temp=*n;
+      *n=*m;
+      *m=temp;
+   }
+   int main()
+  {
+      int n,m;
+      printf("Enter 1st element: ");
+      scanf("%d",&n);
+ 
+      printf("Enter 2nd element: ");
+      scanf("%d",&m);
+ 
+      printf("\nBefore swapping:\n");
+      printf("n=%d\n",n);
+      printf("m=%d\n",m);
+ 
+      swap(&n,&m);
+ 
+      printf("\nAfter swapping:\n");
+      printf("n=%d\n",n);
+      printf("m=%d\n",m);
+ 
+      return 0;
+  }
+
