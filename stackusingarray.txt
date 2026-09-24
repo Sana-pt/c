@@ -72,3 +72,96 @@ if(top==n-1)
       return 0;
   }
 
+
+
+
+
+--------------------------OUTPUT---------------------------------
+
+
+Enter size of stack:
+4
+
+STACK OPERATIONS
+1.PUSH
+2.POP
+3.DISPLAY
+4.EXIT
+Enter your choice: 1
+Enter value: 3
+3 PUSHED
+
+STACK OPERATIONS
+1.PUSH
+2.POP
+3.DISPLAY
+4.EXIT
+Enter your choice: 1
+Enter value: 2
+2 PUSHED
+
+STACK OPERATIONS
+1.PUSH
+2.POP
+3.DISPLAY
+4.EXIT
+Enter your choice: 1
+Enter value: 4
+4 PUSHED
+
+STACK OPERATIONS
+1.PUSH
+2.POP
+3.DISPLAY
+4.EXIT
+Enter your choice: 1
+Enter value: 5
+5 PUSHED
+
+STACK OPERATIONS
+1.PUSH
+2.POP
+3.DISPLAY
+4.EXIT
+Enter your choice: 1
+Stack is overflow
+
+STACK OPERATIONS
+1.PUSH
+2.POP
+3.DISPLAY
+4.EXIT
+Enter your choice: 3
+Stack elements are:
+5
+4
+2
+3
+
+STACK OPERATIONS
+1.PUSH
+2.POP
+3.DISPLAY
+4.EXIT
+Enter your choice: 2
+5 POPPED
+
+STACK OPERATIONS
+1.PUSH
+2.POP
+3.DISPLAY
+4.EXIT
+Enter your choice: 3
+Stack elements are:
+4
+2
+3
+
+STACK OPERATIONS
+1.PUSH
+2.POP
+3.DISPLAY
+4.EXIT
+Enter your choice: 4
+
+
