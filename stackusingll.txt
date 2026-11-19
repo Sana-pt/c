@@ -1,0 +1,185 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+struct Node{
+    int data;
+    struct Node *next;
+};
+
+struct Node *top = NULL;
+ void push(int value){
+    struct Node *newNode = (struct Node*)malloc(sizeof(struct Node));
+    if(newNode == NULL){
+        printf("Stack Overflow\n");
+        return;
+    }
+    newNode->data = value;
+    newNode->next = top;
+    top = newNode;
+    printf("\n%d Pushed To Stack\n",value);
+}
+
+ void pop(){
+    if(top == NULL){
+        printf("Stack Underflow\n");
+        return;
+    }
+    struct Node *temp = top;
+    printf("\n %d is Popped from Stack\n",top->data);
+    top = top->next;
+    free(temp);
+}
+
+ void display(){
+    if(top == NULL){
+        printf("Stack is Empty");
+        return;
+    }
+    struct Node *temp=top;
+    printf("\nStack Elements are : \n");
+    while(temp != NULL){
+        printf("%d\n",temp->data);
+        temp = temp->next;
+    }
+}
+
+ int main(){
+    int choice,val;
+    while(1){
+        printf("\n-------Stack Using Linked List-------\n");
+        printf("1.Push\n2.Pop\n3.Display\n4.Exit\n");
+        printf("Enter Your Choice = ");
+        scanf("%d",&choice);
+         switch(choice){
+            case 1:
+                printf("Enter your value = ");
+                scanf("%d",&val);
+                push(val);
+                break;
+            case 2:
+                pop();
+                break;
+            case 3:
+                 display();
+               break;
+            case 4:
+                printf("\n------Exiting------\n");
+                exit(0);
+             default:
+                printf("Invalid Choice");
+        }
+    }
+     return 0;
+}
+
+
+
+
+
+
+***************************************OUTPUT*************************************************
+
+-------Stack Using Linked List-------
+1.Push
+2.Pop
+3.Display
+4.Exit
+Enter Your Choice = 1
+Enter your value = 5
+
+5 Pushed To Stack
+
+-------Stack Using Linked List-------
+1.Push
+2.Pop
+3.Display
+4.Exit
+Enter Your Choice = 1
+Enter your value = 8
+
+8 Pushed To Stack
+
+-------Stack Using Linked List-------
+1.Push
+2.Pop
+3.Display
+4.Exit
+Enter Your Choice = 1
+Enter your value = 6
+
+6 Pushed To Stack
+
+-------Stack Using Linked List-------
+1.Push
+2.Pop
+3.Display
+4.Exit
+Enter Your Choice = 1
+Enter your value = 3
+
+3 Pushed To Stack
+
+-------Stack Using Linked List-------
+1.Push
+2.Pop
+3.Display
+4.Exit
+Enter Your Choice = 2
+
+ 3 is Popped from Stack
+
+-------Stack Using Linked List-------
+1.Push
+2.Pop
+3.Display
+4.Exit
+Enter Your Choice = 3
+
+Stack Elements are :
+6
+8
+5
+
+-------Stack Using Linked List-------
+1.Push
+2.Pop
+3.Display
+4.Exit
+Enter Your Choice = 2
+
+ 6 is Popped from Stack
+
+-------Stack Using Linked List-------
+1.Push
+2.Pop
+3.Display
+4.Exit
+Enter Your Choice = 2
+
+ 8 is Popped from Stack
+
+-------Stack Using Linked List-------
+1.Push
+2.Pop
+3.Display
+4.Exit
+Enter Your Choice = 2
+
+ 5 is Popped from Stack
+
+-------Stack Using Linked List-------
+1.Push
+2.Pop
+3.Display
+4.Exit
+Enter Your Choice = 2
+Stack Underflow
+
+-------Stack Using Linked List-------
+1.Push
+2.Pop
+3.Display
+4.Exit
+Enter Your Choice = 4
+
+------Exiting------
