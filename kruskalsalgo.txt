@@ -1,0 +1,67 @@
+
+#include <stdio.h>
+
+int main()
+{
+    int n;
+    printf("enter no of vertices:");
+    scanf("%d", &n);
+
+    int c[10][10], p[10];
+    int a, b, u, v, min, ed = 0, t = 0;
+
+    printf("enter cost of adj matrix(0=no edge):\n");
+
+    for(int i = 0; i < n; i++)
+        for(int j = 0; j < n; j++)
+            scanf("%d", &c[i][j]);
+
+    for(int i = 0; i < n; i++)
+        p[i] = i;
+
+    printf("edges selected:\n");
+
+    while(ed < n - 1)
+    {
+        min = 9999;
+        a = -1;
+        b = -1;
+
+        for(int i = 0; i < n; i++)
+            for(int j = 0; j < n; j++)
+                if(c[i][j] != 0 && c[i][j] < min)
+                {
+                    min = c[i][j];
+                    a = i;
+                    b = j;
+                }
+
+        if(a == -1)
+        {
+            printf("MST not possible");
+            return 0;
+        }
+
+        u = a;
+        while(p[u] != u)
+            u = p[u];
+
+        v = b;
+        while(p[v] != v)
+            v = p[v];
+
+        if(u != v)
+        {
+            printf("%d->%d(cost=%d)\n", a, b, min);
+            p[u] = v;
+            t += min;
+            ed++;
+        }
+
+        c[a][b] = c[b][a] = 9999;
+    }
+
+    printf("\nTotal minimum cost = %d\n", t);
+
+    return 0;
+}
